@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-  {{ $id }}
-    {{-- <catalog route="{{ $id }}"></catalog> --}}
+    <collection id="{{ $id }}"></collection>
 @endsection
