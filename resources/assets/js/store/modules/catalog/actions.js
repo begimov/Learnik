@@ -3,8 +3,7 @@ import api from '../../api'
 export default {
   getCollections ({dispatch, commit}, page) {
     // commit('setLoadingConversations', true)
-    api.catalog.getCollections(1).then(res => {
-      console.log(res.data);
+    api.catalog.getCollections(page).then(res => {
       commit('setCollections', res.data)
       // commit('setLoadingConversations', false)
     })

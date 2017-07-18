@@ -28,4 +28,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Web API for VUE components
 Route::group(['prefix' => 'webapi', 'namespace' => 'Api'], function () {
     Route::get('/catalog', 'CatalogController@index');
+    Route::get('/collection/{collection}/card/{card}', 'CollectionController@index');
 });

@@ -21,20 +21,20 @@ import {
 } from 'vuex'
 
 export default {
-    // computed: {
-    //     ...mapGetters([
-    //         'collections',
-    //         'getLoadingCollections'
-    //     ])
-    // },
-    // methods: {
-    //     ...mapActions([
-    //         'getCollections'
-    //     ])
-    // },
+    computed: {
+        ...mapGetters([
+            'card',
+            'getLoadingCard'
+        ])
+    },
+    methods: {
+        ...mapActions([
+            'getCard'
+        ])
+    },
     props: ['id'],
-//     mounted() {
-//       this.getCollections(1)
-//     }
+    mounted() {
+      this.getCard(this.id, 1)
+    }
 }
 </script>

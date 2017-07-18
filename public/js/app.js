@@ -12653,10 +12653,13 @@ if (token) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__catalog__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collection__ = __webpack_require__(66);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  catalog: __WEBPACK_IMPORTED_MODULE_0__catalog__["a" /* default */]
+  catalog: __WEBPACK_IMPORTED_MODULE_0__catalog__["a" /* default */],
+  collection: __WEBPACK_IMPORTED_MODULE_1__collection__["a" /* default */]
 });
 
 /***/ }),
@@ -12694,8 +12697,7 @@ __WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex
 /* harmony default export */ __webpack_exports__["a"] = ({
   getCollections({ dispatch, commit }, page) {
     // commit('setLoadingConversations', true)
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getCollections(1).then(res => {
-      console.log(res.data);
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getCollections(page).then(res => {
       commit('setCollections', res.data);
       // commit('setLoadingConversations', false)
     });
@@ -42859,6 +42861,8 @@ module.exports = __webpack_require__(11);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 //
 //
 //
@@ -42879,21 +42883,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    // computed: {
-    //     ...mapGetters([
-    //         'collections',
-    //         'getLoadingCollections'
-    //     ])
-    // },
-    // methods: {
-    //     ...mapActions([
-    //         'getCollections'
-    //     ])
-    // },
-    props: ['id']
-    //     mounted() {
-    //       this.getCollections(1)
-    //     }
+    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['card', 'getLoadingCard'])),
+    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getCard'])),
+    props: ['id'],
+    mounted() {
+        this.getCard(this.id, 1);
+    }
 });
 
 /***/ }),
@@ -42968,10 +42963,11 @@ if (false) {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  getCard({ dispatch, commit }, id) {
+  getCard({ dispatch, commit }, collId, cardId) {
     // commit('setLoadingConversations', true)
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].collection.getCard(1).then(res => {
-      commit('setCard', res.data);
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].collection.getCard(collId, cardId).then(res => {
+      console.log(res);
+      // commit('setCard', res.data)
       // commit('setLoadingConversations', false)
     });
   }
@@ -43031,6 +43027,21 @@ if (false) {
 /* harmony default export */ __webpack_exports__["a"] = ({
   card: null,
   loadingCard: false
+});
+
+/***/ }),
+/* 66 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  getCard(collId, cardId) {
+    return new Promise((resolve, reject) => {
+      axios.get(`/webapi/collection/${collId}/card/${cardId}`).then(res => {
+        resolve(res);
+      });
+    });
+  }
 });
 
 /***/ })
