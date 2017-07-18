@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <collection id="{{ $id }}"></collection>
+    <collection coll-id="{{ $collId }}" card-id="{{ $cardId }}"></collection>
 @endsection

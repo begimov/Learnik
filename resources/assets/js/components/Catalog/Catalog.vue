@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" v-if="collections">
               <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="collection in collections">
                   <div class="panel panel-default">
                       <div class="panel-body">

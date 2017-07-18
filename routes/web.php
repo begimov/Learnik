@@ -14,7 +14,7 @@ Route::group(['prefix' => 'catalog', 'namespace' => 'Catalog'], function () {
 
 // Collection
 Route::group(['prefix' => 'collection', 'namespace' => 'Collection'], function () {
-    Route::get('/{id}', 'CollectionController@index')->name('collection.index');
+    Route::get('/{collection}', 'CollectionController@index')->name('collection.index');
 });
 
 // Auth routes
@@ -28,5 +28,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Web API for VUE components
 Route::group(['prefix' => 'webapi', 'namespace' => 'Api'], function () {
     Route::get('/catalog', 'CatalogController@index');
-    Route::get('/collection/{collection}/card/{card}', 'CollectionController@index');
+    Route::get('/collection/{collection}/card/{cardId}', 'CollectionController@index');
 });

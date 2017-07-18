@@ -1,5 +1,5 @@
 export default {
-  setCard (state, collections) {
+  setCard (state, card) {
     state.card = card
   }
 }

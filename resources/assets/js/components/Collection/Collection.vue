@@ -4,8 +4,8 @@
             <div class="col-md-12">
               <div class="collection col-md-6 col-md-offset-3">
                   <div class="panel panel-default">
-                      <div class="panel-body">
-                        ghjghj
+                      <div class="panel-body" v-if="card">
+                        {{ card.body }}
                       </div>
                   </div>
               </div>
@@ -32,9 +32,12 @@ export default {
             'getCard'
         ])
     },
-    props: ['id'],
+    props: ['collId', 'cardId'],
     mounted() {
-      this.getCard(this.id, 1)
+        this.getCard({
+          collId: this.collId,
+          cardId: this.cardId
+        })
     }
 }
 </script>
