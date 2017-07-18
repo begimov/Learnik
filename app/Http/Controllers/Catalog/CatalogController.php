@@ -11,6 +11,7 @@ class CatalogController extends Controller
 {
     public function index()
     {
-        return view('catalog.index');
+        $route = route('collection.index', '');
+        return view('catalog.index', compact('route'));
     }
 }

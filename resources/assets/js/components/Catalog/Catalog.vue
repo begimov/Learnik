@@ -2,11 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body" v-for="collection in collections">
-                      {{ collection }}
-                    </div>
-                </div>
+              <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="collection in collections">
+                  <div class="panel panel-default">
+                      <div class="panel-body">
+                        <a :href="`${route}/${collection.id}`"><h3>{{ collection.name }}</h3></a>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
@@ -30,6 +32,7 @@ export default {
             'getCollections'
         ])
     },
+    props: ['route'],
     mounted() {
       this.getCollections(1)
     }
