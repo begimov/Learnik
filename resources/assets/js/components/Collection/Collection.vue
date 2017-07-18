@@ -2,14 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-              {{ id }}
-              <!-- <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="collection in collections">
+              <div class="collection col-md-6 col-md-offset-3">
                   <div class="panel panel-default">
                       <div class="panel-body">
-                        <a :href="`${route}/${collection.id}`"><h3>{{ collection.name }}</h3></a>
+                        ghjghj
                       </div>
                   </div>
-              </div> -->
+              </div>
             </div>
         </div>
     </div>
