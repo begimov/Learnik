@@ -15,6 +15,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('catalog', require('./components/Catalog/Catalog.vue'));
 Vue.component('cards-dashboard', require('./components/CardsDashboard.vue'));
 
 const app = new Vue({
