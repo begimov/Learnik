@@ -8,6 +8,6 @@ class Collection extends Model
 {
     public function cards()
     {
-        $this->hasMany(Card::class);
+        return $this->hasMany(Card::class);
     }
 }

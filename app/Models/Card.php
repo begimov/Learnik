@@ -8,6 +8,6 @@ class Card extends Model
 {
     public function collection()
     {
-        $this->belongsTo(Collection::class);
+        return $this->belongsTo(Collection::class);
     }
 }
