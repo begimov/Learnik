@@ -785,7 +785,7 @@ window.Vue = __webpack_require__(37);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(34));
+Vue.component('cards-dashboard', __webpack_require__(49));
 
 var app = new Vue({
   el: '#app'
@@ -1639,35 +1639,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 28 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
+/* 28 */,
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31651,40 +31623,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(35)(
-  /* script */
-  __webpack_require__(28),
-  /* template */
-  __webpack_require__(36),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/max/Desktop/Learnik/resources/assets/js/components/Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-574105ec", Component.options)
-  } else {
-    hotAPI.reload("data-v-574105ec", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 34 */,
 /* 35 */
 /***/ (function(module, exports) {
 
@@ -31742,35 +31681,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-574105ec", module.exports)
-  }
-}
-
-/***/ }),
+/* 36 */,
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41879,6 +41790,105 @@ module.exports = function(module) {
 __webpack_require__(8);
 module.exports = __webpack_require__(9);
 
+
+/***/ }),
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    'id': {
+      default: null
+    }
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(35)(
+  /* script */
+  __webpack_require__(48),
+  /* template */
+  __webpack_require__(50),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/Learnik/resources/assets/js/components/CardsDashboard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] CardsDashboard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-49b5125f", Component.options)
+  } else {
+    hotAPI.reload("data-v-49b5125f", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-5"
+  }, [_vm._v("\n          dsfgdfg\n        ")]), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-7"
+  }, [_vm._v("\n          dfgdsg\n        ")])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-49b5125f", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
