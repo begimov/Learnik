@@ -11,7 +11,6 @@ class CatalogController extends Controller
 {
     public function index()
     {
-        $collections = Collection::all();
-        return view('catalog.index', compact('collections'));
+        return view('catalog.index');
     }
 }

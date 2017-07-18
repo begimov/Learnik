@@ -1,4 +1,4 @@
 export default {
-  collections: [1,2],
+  collections: [],
   loadingCollections: false
 }

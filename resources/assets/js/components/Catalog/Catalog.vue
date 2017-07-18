@@ -25,13 +25,13 @@ export default {
             'getLoadingCollections'
         ])
     },
-    // methods: {
-    //     ...mapActions([
-    //         'getConversation'
-    //     ])
-    // },
-    props: [],
+    methods: {
+        ...mapActions([
+            'getCollections'
+        ])
+    },
     mounted() {
+      this.getCollections(1)
     }
 }
 </script>

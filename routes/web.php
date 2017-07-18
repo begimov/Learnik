@@ -5,14 +5,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Collections catalog
+// Catalog of collections
 Route::group(['prefix' => 'catalog', 'namespace' => 'Catalog'], function () {
     Route::get('/', 'CatalogController@index')->name('catalog.index');
 });
 
 // Web API for VUE components
 Route::group(['prefix' => 'webapi', 'namespace' => 'Api'], function () {
-    Route::get('/cards', 'CardsController@index');
+    Route::get('/catalog', 'CatalogController@index');
 });
 
 // Auth routes
