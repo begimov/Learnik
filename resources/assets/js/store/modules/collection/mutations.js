@@ -4,7 +4,7 @@ export default {
     state.cards = cards
   },
 
-  setCard (state, id) {
+  setInitialCard (state, id) {
     if (state.cards) {
       const nextCardArrIndex = state.cards.findIndex(function(element, index, array) {
         return element.id === id
@@ -26,6 +26,21 @@ export default {
         (cards[cardArrIndex + 1])
           ? state.card = cards[cardArrIndex + 1]
           : state.card = cards[0]
+      }
+    }
+  },
+
+  setPreviousCard (state) {
+    const cards = state.cards
+    const card = state.card
+    if (cards && card) {
+      const cardArrIndex = cards.findIndex(function(element, index, array) {
+        return element.id === card.id
+      })
+      if (cardArrIndex !== -1) {
+        (cards[cardArrIndex - 1])
+          ? state.card = cards[cardArrIndex - 1]
+          : state.card = cards[cards.length - 1]
       }
     }
   }

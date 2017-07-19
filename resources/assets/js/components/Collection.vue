@@ -6,6 +6,9 @@
                   <div class="panel panel-default" v-if="cards">
                       <div class="panel-body" v-if="card">
                         <h3>{{ card.body }}</h3>
+                        <a href="#" v-on:click.stop.prevent="previousCard()">
+                          PREV
+                        </a>
                         <a href="#" v-on:click.stop.prevent="nextCard()">
                           NEXT
                         </a>
@@ -34,7 +37,8 @@ export default {
     methods: {
         ...mapActions([
             'getCards',
-            'nextCard'
+            'nextCard',
+            'previousCard'
         ])
     },
     props: ['collectionId'],

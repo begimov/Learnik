@@ -42693,12 +42693,15 @@ module.exports = __webpack_require__(11);
     // commit('setLoadingConversations', true)
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].collection.getCards(collectionId).then(res => {
       commit('setCards', res.data);
-      commit('setCard', res.data[0].id);
+      commit('setInitialCard', res.data[0].id);
       // commit('setLoadingConversations', false)
     });
   },
   nextCard({ dispatch, commit }) {
     commit('setNextCard');
+  },
+  previousCard({ dispatch, commit }) {
+    commit('setPreviousCard');
   }
 });
 
@@ -42751,7 +42754,7 @@ module.exports = __webpack_require__(11);
     state.cards = cards;
   },
 
-  setCard(state, id) {
+  setInitialCard(state, id) {
     if (state.cards) {
       const nextCardArrIndex = state.cards.findIndex(function (element, index, array) {
         return element.id === id;
@@ -42771,6 +42774,19 @@ module.exports = __webpack_require__(11);
       });
       if (cardArrIndex !== -1) {
         cards[cardArrIndex + 1] ? state.card = cards[cardArrIndex + 1] : state.card = cards[0];
+      }
+    }
+  },
+
+  setPreviousCard(state) {
+    const cards = state.cards;
+    const card = state.card;
+    if (cards && card) {
+      const cardArrIndex = cards.findIndex(function (element, index, array) {
+        return element.id === card.id;
+      });
+      if (cardArrIndex !== -1) {
+        cards[cardArrIndex - 1] ? state.card = cards[cardArrIndex - 1] : state.card = cards[cards.length - 1];
       }
     }
   }
@@ -43258,12 +43274,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['cards', 'getIsLoadingCards', 'card'])),
-    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getCards', 'nextCard'])),
+    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getCards', 'nextCard', 'previousCard'])),
     props: ['collectionId'],
     mounted() {
         this.getCards(this.collectionId);
@@ -43288,6 +43307,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [(_vm.card) ? _c('div', {
     staticClass: "panel-body"
   }, [_c('h3', [_vm._v(_vm._s(_vm.card.body))]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.stopPropagation();
+        $event.preventDefault();
+        _vm.previousCard()
+      }
+    }
+  }, [_vm._v("\n                      PREV\n                    ")]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "#"
     },
