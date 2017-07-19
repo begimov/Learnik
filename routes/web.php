@@ -15,7 +15,7 @@ Route::resource('cards', 'CardController');
 Auth::routes();
 
 // Profile
-Route::get('/profile', 'ProfileController@index');
+Route::get('/profile', 'ProfileController@index')->name('profile');
 
 //WEBAPI ROUTES
 
