@@ -1,5 +1,4 @@
-import catalog from './modules/catalog'
-import collection from './modules/collection'
+import themes from './modules/themes'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -7,7 +6,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    catalog,
-    collection
+    themes
   }
 })

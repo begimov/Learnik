@@ -1,10 +1,10 @@
 import api from '../../api'
 
 export default {
-  getCard ({dispatch, commit}, {collId, cardId}) {
+  getThemes ({dispatch, commit}, page) {
     // commit('setLoadingConversations', true)
-    api.collection.getCard(collId, cardId).then(res => {
-      commit('setCard', res.data)
+    api.themes.getThemes(page).then(res => {
+      commit('setThemes', res.data)
       // commit('setLoadingConversations', false)
     })
   }

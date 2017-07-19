@@ -1,7 +1,5 @@
-import catalog from './catalog'
-import collection from './collection'
+import themes from './themes'
 
 export default {
-  catalog,
-  collection
+  themes
 }

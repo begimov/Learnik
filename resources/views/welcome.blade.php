@@ -27,7 +27,7 @@
                 <div class="title m-b-md">
                     Learnik
                 </div>
-                <a class="btn btn-default" href="{{ route('catalog.index') }}" role="button">
+                <a class="btn btn-default" href="{{ route('themes.index') }}" role="button">
                   @lang('welcome.start_learning')
                 </a>
 

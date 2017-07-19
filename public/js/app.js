@@ -11682,8 +11682,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */]);
 
 
 
-Vue.component('catalog', __webpack_require__(43));
-Vue.component('collection', __webpack_require__(59));
+Vue.component('themes', __webpack_require__(77));
 
 const app = new Vue({
   el: '#app',
@@ -12538,43 +12537,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 30 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['collections', 'getLoadingCollections'])),
-    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getCollections'])),
-    props: ['route'],
-    mounted() {
-        this.getCollections(1);
-    }
-});
-
-/***/ }),
+/* 30 */,
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12633,33 +12596,16 @@ if (token) {
 // });
 
 /***/ }),
-/* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  getCollections(page) {
-    return new Promise((resolve, reject) => {
-      axios.get(`/webapi/catalog?page=${page}`).then(res => {
-        resolve(res);
-      });
-    });
-  }
-});
-
-/***/ }),
+/* 32 */,
 /* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__catalog__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collection__ = __webpack_require__(66);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__themes__ = __webpack_require__(79);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  catalog: __WEBPACK_IMPORTED_MODULE_0__catalog__["a" /* default */],
-  collection: __WEBPACK_IMPORTED_MODULE_1__collection__["a" /* default */]
+  themes: __WEBPACK_IMPORTED_MODULE_0__themes__["a" /* default */]
 });
 
 /***/ }),
@@ -12667,89 +12613,27 @@ if (token) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_catalog__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_collection__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_themes__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(2);
 
 
 
 
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex__["a" /* default */]);
 
-__WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
-
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_2_vuex__["a" /* default */].Store({
   modules: {
-    catalog: __WEBPACK_IMPORTED_MODULE_0__modules_catalog__["a" /* default */],
-    collection: __WEBPACK_IMPORTED_MODULE_1__modules_collection__["a" /* default */]
+    themes: __WEBPACK_IMPORTED_MODULE_0__modules_themes__["a" /* default */]
   }
 }));
 
 /***/ }),
-/* 35 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(33);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  getCollections({ dispatch, commit }, page) {
-    // commit('setLoadingConversations', true)
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].catalog.getCollections(page).then(res => {
-      commit('setCollections', res.data);
-      // commit('setLoadingConversations', false)
-    });
-  }
-});
-
-/***/ }),
-/* 36 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  collections(state) {
-    return state.collections;
-  },
-  getLoadingCollections(state) {
-    return state.loadingCollections;
-  }
-});
-
-/***/ }),
-/* 37 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutations__ = __webpack_require__(57);
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
-  getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */],
-  actions: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* default */],
-  mutations: __WEBPACK_IMPORTED_MODULE_3__mutations__["a" /* default */]
-});
-
-/***/ }),
-/* 38 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  collections: [],
-  loadingCollections: false
-});
-
-/***/ }),
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
 /* 39 */
 /***/ (function(module, exports) {
 
@@ -42675,40 +42559,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(44)(
-  /* script */
-  __webpack_require__(30),
-  /* template */
-  __webpack_require__(45),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/max/Desktop/Learnik/resources/assets/js/components/Catalog/Catalog.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Catalog.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-350fe205", Component.options)
-  } else {
-    hotAPI.reload("data-v-350fe205", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 43 */,
 /* 44 */
 /***/ (function(module, exports) {
 
@@ -42766,39 +42617,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [(_vm.collections) ? _c('div', {
-    staticClass: "col-md-12"
-  }, _vm._l((_vm.collections), function(collection) {
-    return _c('div', {
-      staticClass: "collection col-lg-3 col-md-4 col-sm-6"
-    }, [_c('div', {
-      staticClass: "panel panel-default"
-    }, [_c('div', {
-      staticClass: "panel-body"
-    }, [_c('a', {
-      attrs: {
-        "href": (_vm.route + "/" + (collection.id))
-      }
-    }, [_c('h3', [_vm._v(_vm._s(collection.name))])])])])])
-  })) : _vm._e()])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-350fe205", module.exports)
-  }
-}
-
-/***/ }),
+/* 45 */,
 /* 46 */
 /***/ (function(module, exports) {
 
@@ -42844,18 +42663,95 @@ module.exports = __webpack_require__(11);
 /* 54 */,
 /* 55 */,
 /* 56 */,
-/* 57 */
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(33);
+
+
 /* harmony default export */ __webpack_exports__["a"] = ({
-  setCollections(state, collections) {
-    state.collections = collections;
+  getThemes({ dispatch, commit }, page) {
+    // commit('setLoadingConversations', true)
+    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].themes.getThemes(page).then(res => {
+      commit('setThemes', res.data);
+      // commit('setLoadingConversations', false)
+    });
   }
 });
 
 /***/ }),
-/* 58 */
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  themes(state) {
+    return state.themes;
+  },
+  getIsLoadingThemes(state) {
+    return state.isLoadingThemes;
+  }
+});
+
+/***/ }),
+/* 73 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutations__ = __webpack_require__(74);
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
+  getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */],
+  actions: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* default */],
+  mutations: __WEBPACK_IMPORTED_MODULE_3__mutations__["a" /* default */]
+});
+
+/***/ }),
+/* 74 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  setThemes(state, themes) {
+    state.themes = themes;
+  }
+});
+
+/***/ }),
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  themes: [],
+  isLoadingThemes: false
+});
+
+/***/ }),
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42883,34 +42779,31 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['card', 'getLoadingCard'])),
-    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getCard'])),
-    props: ['collId', 'cardId'],
+    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['themes', 'getIsLoadingThemes'])),
+    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getThemes'])),
+    props: ['route'],
     mounted() {
-        this.getCard({
-            collId: this.collId,
-            cardId: this.cardId
-        });
+        this.getThemes(1);
     }
 });
 
 /***/ }),
-/* 59 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(44)(
   /* script */
-  __webpack_require__(58),
+  __webpack_require__(76),
   /* template */
-  __webpack_require__(60),
+  __webpack_require__(78),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/max/Desktop/Learnik/resources/assets/js/components/Collection/Collection.vue"
+Component.options.__file = "/Users/max/Desktop/Learnik/resources/assets/js/components/Themes.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Collection.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] Themes.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -42919,9 +42812,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-24335751", Component.options)
+    hotAPI.createRecord("data-v-a7351590", Component.options)
   } else {
-    hotAPI.reload("data-v-24335751", Component.options)
+    hotAPI.reload("data-v-a7351590", Component.options)
   }
 })()}
 
@@ -42929,7 +42822,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -42937,107 +42830,39 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('div', {
     staticClass: "row"
-  }, [_c('div', {
+  }, [(_vm.themes) ? _c('div', {
     staticClass: "col-md-12"
-  }, [_c('div', {
-    staticClass: "collection col-md-6 col-md-offset-3"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [(_vm.card) ? _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    " + _vm._s(_vm.card.body) + "\n                  ")]) : _vm._e()])])])])])
+  }, _vm._l((_vm.themes), function(theme) {
+    return _c('div', {
+      staticClass: "collection col-lg-3 col-md-4 col-sm-6"
+    }, [_c('div', {
+      staticClass: "panel panel-default"
+    }, [_c('div', {
+      staticClass: "panel-body"
+    }, [_c('a', {
+      attrs: {
+        "href": (_vm.route + "/" + (theme.id))
+      }
+    }, [_c('h3', [_vm._v(_vm._s(theme.name))])])])])])
+  })) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-24335751", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-a7351590", module.exports)
   }
 }
 
 /***/ }),
-/* 61 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(33);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  getCard({ dispatch, commit }, { collId, cardId }) {
-    // commit('setLoadingConversations', true)
-    __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].collection.getCard(collId, cardId).then(res => {
-      commit('setCard', res.data);
-      // commit('setLoadingConversations', false)
-    });
-  }
-});
-
-/***/ }),
-/* 62 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  card(state) {
-    return state.card;
-  },
-  getLoadingCard(state) {
-    return state.loadingCard;
-  }
-});
-
-/***/ }),
-/* 63 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getters__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutations__ = __webpack_require__(64);
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
-  getters: __WEBPACK_IMPORTED_MODULE_1__getters__["a" /* default */],
-  actions: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* default */],
-  mutations: __WEBPACK_IMPORTED_MODULE_3__mutations__["a" /* default */]
-});
-
-/***/ }),
-/* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  setCard(state, card) {
-    state.card = card;
-  }
-});
-
-/***/ }),
-/* 65 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  card: null,
-  loadingCard: false
-});
-
-/***/ }),
-/* 66 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  getCard(collId, cardId) {
+  getThemes(page) {
     return new Promise((resolve, reject) => {
-      axios.get(`/webapi/collection/${collId}/card/${cardId}`).then(res => {
+      axios.get(`/webapi/themes?page=${page}`).then(res => {
         resolve(res);
       });
     });

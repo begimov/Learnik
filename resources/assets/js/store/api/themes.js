@@ -1,7 +1,7 @@
 export default {
-  getCard(collId, cardId) {
+  getThemes(page) {
     return new Promise((resolve, reject) => {
-      axios.get(`/webapi/collection/${collId}/card/${cardId}`).then(res => {
+      axios.get(`/webapi/themes?page=${page}`).then(res => {
         resolve(res)
       })
     })

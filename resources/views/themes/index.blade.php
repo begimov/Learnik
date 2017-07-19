@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <catalog route="{{ $route }}"></catalog>
+    <themes route="{{ $route }}"></themes>
 @endsection

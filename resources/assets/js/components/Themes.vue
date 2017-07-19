@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-md-12" v-if="collections">
-              <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="collection in collections">
+            <div class="col-md-12" v-if="themes">
+              <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="theme in themes">
                   <div class="panel panel-default">
                       <div class="panel-body">
-                        <a :href="`${route}/${collection.id}`"><h3>{{ collection.name }}</h3></a>
+                        <a :href="`${route}/${theme.id}`"><h3>{{ theme.name }}</h3></a>
                       </div>
                   </div>
               </div>
@@ -23,18 +23,18 @@ import {
 export default {
     computed: {
         ...mapGetters([
-            'collections',
-            'getLoadingCollections'
+            'themes',
+            'getIsLoadingThemes'
         ])
     },
     methods: {
         ...mapActions([
-            'getCollections'
+            'getThemes'
         ])
     },
     props: ['route'],
     mounted() {
-      this.getCollections(1)
+      this.getThemes(1)
     }
 }
 </script>
