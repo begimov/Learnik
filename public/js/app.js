@@ -43301,12 +43301,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-md-12"
   }, [_c('div', {
-    staticClass: "collection col-lg-3 col-md-4 col-sm-6"
+    staticClass: "collection col-lg-4 col-md-4 col-sm-6 col-xs-8 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-2"
   }, [(_vm.cards) ? _c('div', {
     staticClass: "panel panel-default"
   }, [(_vm.card) ? _c('div', {
     staticClass: "panel-body"
-  }, [_c('h3', [_vm._v(_vm._s(_vm.card.body))]), _vm._v(" "), _c('a', {
+  }, [_c('p', [_c('code', {
+    staticClass: "prettyprint"
+  }, [_vm._v(_vm._s(_vm.card.body))])]), _vm._v(" "), _c('a', {
     attrs: {
       "href": "#"
     },

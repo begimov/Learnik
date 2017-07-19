@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-              <div class="collection col-lg-3 col-md-4 col-sm-6">
+              <div class="collection col-lg-4 col-md-4 col-sm-6 col-xs-8 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-2">
                   <div class="panel panel-default" v-if="cards">
                       <div class="panel-body" v-if="card">
-                        <h3>{{ card.body }}</h3>
+                        <p><code class="prettyprint">{{ card.body }}</code></p>
                         <a href="#" v-on:click.stop.prevent="previousCard()">
                           PREV
                         </a>
