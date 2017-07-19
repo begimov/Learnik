@@ -23,7 +23,9 @@ class CardController extends Controller
      */
     public function create()
     {
-        //
+        return view('card.create', [
+          'route' => 'route'
+        ]);
     }
 
     /**
