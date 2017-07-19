@@ -14,6 +14,9 @@ Route::resource('cards', 'CardController');
 // Auth routes
 Auth::routes();
 
+// Profile
+Route::get('/profile', 'ProfileController@index');
+
 //WEBAPI ROUTES
 
 // Web API for VUE components
