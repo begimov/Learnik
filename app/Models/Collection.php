@@ -10,4 +10,8 @@ class Collection extends Model
     {
         return $this->hasMany(Card::class);
     }
+    public function theme()
+    {
+        return $this->belongsTo(Theme::class);
+    }
 }
