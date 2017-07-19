@@ -43277,6 +43277,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -43306,9 +43309,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [(_vm.card) ? _c('div', {
     staticClass: "panel-body"
-  }, [_c('p', [_c('code', {
+  }, [(_vm.card.body) ? _c('p', [_vm._v(_vm._s(_vm.card.body))]) : _vm._e(), _vm._v(" "), (_vm.card.snippet) ? _c('p', [_c('code', {
     staticClass: "prettyprint"
-  }, [_vm._v(_vm._s(_vm.card.body))])]), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm.card.snippet))])]) : _vm._e()]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "panel-footer panel-custom"
+  }, [_c('a', {
     attrs: {
       "href": "#"
     },
@@ -43330,7 +43335,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.nextCard()
       }
     }
-  }, [_vm._v("\n                      NEXT\n                    ")])]) : _vm._e()]) : _vm._e()])])])])
+  }, [_vm._v("\n                      NEXT\n                    ")])])]) : _vm._e()])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

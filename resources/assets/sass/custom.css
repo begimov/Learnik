@@ -5,3 +5,7 @@
 .collection {
     padding: 0 10px 0 10px;
 }
+
+.panel-footer.panel-custom {
+    background: white;
+}
