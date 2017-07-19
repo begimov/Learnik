@@ -13,4 +13,10 @@ class ThemeController extends Controller
         $themes = Theme::all();
         return $themes->toArray();
     }
+
+    public function show(Theme $theme)
+    {
+        $collections = $theme->collections;
+        return $collections->toArray();
+    }
 }

@@ -45,7 +45,7 @@ class CollectionController extends Controller
      */
     public function show($id)
     {
-        //
+        echo "string";
     }
 
     /**

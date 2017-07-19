@@ -48,8 +48,8 @@ class ThemeController extends Controller
     public function show(Theme $theme)
     {
         $themeId = $theme->id;
-        $route = route('collections.index', '');
-        echo $theme->toJson();
+        $route = route('collections.index');
+        return view('theme.index', compact('themeId', 'route'));
     }
 
     /**

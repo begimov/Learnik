@@ -22,6 +22,7 @@ Vue.use(Vuex);
 import store from './store'
 
 Vue.component('themes', require('./components/Themes.vue'));
+Vue.component('theme', require('./components/Theme.vue'));
 
 const app = new Vue({
     el: '#app',
