@@ -1,11 +1,14 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-md-12" v-if="cards">
-              <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="card in cards">
-                  <div class="panel panel-default">
-                      <div class="panel-body">
+            <div class="col-md-12">
+              <div class="collection col-lg-3 col-md-4 col-sm-6">
+                  <div class="panel panel-default" v-if="cards">
+                      <div class="panel-body" v-if="card">
                         <h3>{{ card.body }}</h3>
+                        <a href="#" v-on:click.stop.prevent="nextCard()">
+                          NEXT
+                        </a>
                       </div>
                   </div>
               </div>
@@ -24,12 +27,14 @@ export default {
     computed: {
         ...mapGetters([
             'cards',
-            'getIsLoadingCards'
+            'getIsLoadingCards',
+            'card'
         ])
     },
     methods: {
         ...mapActions([
-            'getCards'
+            'getCards',
+            'nextCard'
         ])
     },
     props: ['collectionId'],

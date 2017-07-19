@@ -4,5 +4,8 @@ export default {
   },
   getIsLoadingCards (state) {
     return state.isLoadingCards
+  },
+  card (state) {
+    return state.card
   }
 }

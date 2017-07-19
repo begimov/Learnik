@@ -42693,8 +42693,12 @@ module.exports = __webpack_require__(11);
     // commit('setLoadingConversations', true)
     __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].collection.getCards(collectionId).then(res => {
       commit('setCards', res.data);
+      commit('setCard', res.data[0].id);
       // commit('setLoadingConversations', false)
     });
+  },
+  nextCard({ dispatch, commit }) {
+    commit('setNextCard');
   }
 });
 
@@ -42709,6 +42713,9 @@ module.exports = __webpack_require__(11);
   },
   getIsLoadingCards(state) {
     return state.isLoadingCards;
+  },
+  card(state) {
+    return state.card;
   }
 });
 
@@ -42739,9 +42746,35 @@ module.exports = __webpack_require__(11);
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
+
   setCards(state, cards) {
     state.cards = cards;
+  },
+
+  setCard(state, id) {
+    if (state.cards) {
+      const nextCardArrIndex = state.cards.findIndex(function (element, index, array) {
+        return element.id === id;
+      });
+      if (nextCardArrIndex !== -1) {
+        state.card = state.cards[nextCardArrIndex];
+      }
+    }
+  },
+
+  setNextCard(state) {
+    const cards = state.cards;
+    const card = state.card;
+    if (cards && card) {
+      const cardArrIndex = cards.findIndex(function (element, index, array) {
+        return element.id === card.id;
+      });
+      if (cardArrIndex !== -1) {
+        cards[cardArrIndex + 1] ? state.card = cards[cardArrIndex + 1] : state.card = cards[0];
+      }
+    }
   }
+
 });
 
 /***/ }),
@@ -42750,8 +42783,9 @@ module.exports = __webpack_require__(11);
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  cards: [],
-  isLoadingCards: false
+  cards: null,
+  isLoadingCards: false,
+  card: null
 });
 
 /***/ }),
@@ -43221,12 +43255,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['cards', 'getIsLoadingCards'])),
-    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getCards'])),
+    computed: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['cards', 'getIsLoadingCards', 'card'])),
+    methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapActions */])(['getCards', 'nextCard'])),
     props: ['collectionId'],
     mounted() {
         this.getCards(this.collectionId);
@@ -43242,17 +43279,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('div', {
     staticClass: "row"
-  }, [(_vm.cards) ? _c('div', {
+  }, [_c('div', {
     staticClass: "col-md-12"
-  }, _vm._l((_vm.cards), function(card) {
-    return _c('div', {
-      staticClass: "collection col-lg-3 col-md-4 col-sm-6"
-    }, [_c('div', {
-      staticClass: "panel panel-default"
-    }, [_c('div', {
-      staticClass: "panel-body"
-    }, [_c('h3', [_vm._v(_vm._s(card.body))])])])])
-  })) : _vm._e()])])
+  }, [_c('div', {
+    staticClass: "collection col-lg-3 col-md-4 col-sm-6"
+  }, [(_vm.cards) ? _c('div', {
+    staticClass: "panel panel-default"
+  }, [(_vm.card) ? _c('div', {
+    staticClass: "panel-body"
+  }, [_c('h3', [_vm._v(_vm._s(_vm.card.body))]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#"
+    },
+    on: {
+      "click": function($event) {
+        $event.stopPropagation();
+        $event.preventDefault();
+        _vm.nextCard()
+      }
+    }
+  }, [_vm._v("\n                      NEXT\n                    ")])]) : _vm._e()]) : _vm._e()])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

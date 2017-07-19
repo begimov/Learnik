@@ -1,4 +1,5 @@
 export default {
-  cards: [],
-  isLoadingCards: false
+  cards: null,
+  isLoadingCards: false,
+  card: null,
 }
