@@ -20,6 +20,5 @@ Auth::routes();
 Route::group(['prefix' => 'webapi', 'namespace' => 'WebApi'], function () {
     Route::get('/themes', 'ThemeController@index');
     Route::get('/themes/{theme}', 'ThemeController@show');
-    Route::get('/themes/{theme}/collections', 'CollectionController@index');
-    Route::get('/themes/{theme}/collections/{collection}', 'CollectionController@show');
+    Route::get('/collections/{collection}', 'CollectionController@show');
 });

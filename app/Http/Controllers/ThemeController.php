@@ -14,7 +14,7 @@ class ThemeController extends Controller
      */
     public function index()
     {
-        $route = route('themes.show', '');
+        $route = route('themes.index');
         return view('themes.index', compact('route'));
     }
 

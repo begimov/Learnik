@@ -23,6 +23,7 @@ import store from './store'
 
 Vue.component('themes', require('./components/Themes.vue'));
 Vue.component('theme', require('./components/Theme.vue'));
+Vue.component('collection', require('./components/Collection.vue'));
 
 const app = new Vue({
     el: '#app',
