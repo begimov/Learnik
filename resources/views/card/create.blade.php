@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <card-creator route="{{ $route }}"></card-creator>
+    <card-creator collections="{{ $collections }}"></card-creator>
 @endsection

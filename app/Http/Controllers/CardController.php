@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Collection;
 
 class CardController extends Controller
 {
@@ -23,9 +24,8 @@ class CardController extends Controller
      */
     public function create()
     {
-        return view('card.create', [
-          'route' => 'route'
-        ]);
+        $collections = Collection::all();
+        return view('card.create', compact('collections'));
     }
 
     /**

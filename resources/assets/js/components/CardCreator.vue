@@ -6,6 +6,9 @@
           <div class="panel-body">
             <form class="form-group" action="#" v-on:submit.prevent="send">
               <div class="form-group">
+                {{collections}}
+              </div>
+              <div class="form-group">
                 <textarea v-model="body" id="body" rows="4" cols="30" placeholder="body..." class="form-control"></textarea>
               </div>
               <div class="form-group">
@@ -65,6 +68,7 @@ export default {
       PR.prettyPrint();
     }
   },
+  props: ['collections'],
   mounted() {
   }
 }

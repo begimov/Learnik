@@ -43434,6 +43434,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -43458,6 +43461,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       PR.prettyPrint();
     }
   }),
+  props: ['collections'],
   mounted() {}
 });
 
@@ -43488,6 +43492,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_c('div', {
+    staticClass: "form-group"
+  }, [_vm._v("\n              " + _vm._s(_vm.collections) + "\n            ")]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('textarea', {
     directives: [{
