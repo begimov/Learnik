@@ -26,6 +26,7 @@ Vue.component('themes', require('./components/Themes.vue'));
 Vue.component('theme', require('./components/Theme.vue'));
 Vue.component('collection', require('./components/Collection.vue'));
 Vue.component('card-creator', require('./components/CardCreator.vue'));
+Vue.component('search', require('./components/Search.vue'));
 
 const app = new Vue({
     el: '#app',

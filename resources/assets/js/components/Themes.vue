@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+      <search></search>
         <div class="row">
             <div class="col-md-12" v-if="themes">
               <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="theme in themes">

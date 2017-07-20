@@ -11687,6 +11687,7 @@ Vue.component('themes', __webpack_require__(77));
 Vue.component('theme', __webpack_require__(80));
 Vue.component('collection', __webpack_require__(89));
 Vue.component('card-creator', __webpack_require__(92));
+Vue.component('search', __webpack_require__(103));
 
 const app = new Vue({
   el: '#app',
@@ -42932,6 +42933,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -42985,7 +42987,7 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
-  }, [_c('div', {
+  }, [_c('search'), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [(_vm.themes) ? _c('div', {
     staticClass: "col-md-12"
@@ -43001,7 +43003,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "panel-body card-body"
     }, [_c('h3', [_vm._v(_vm._s(theme.name))])])])])])
-  })) : _vm._e()])])
+  })) : _vm._e()])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -43087,6 +43089,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -43109,7 +43112,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
-  }, [_c('div', {
+  }, [_c('search'), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [(_vm.collections) ? _c('div', {
     staticClass: "col-md-12"
@@ -43125,7 +43128,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "panel-body card-body"
     }, [_c('h3', [_vm._v(_vm._s(collection.name))])])])])])
-  })) : _vm._e()])])
+  })) : _vm._e()])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -43479,8 +43482,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         body: this.body,
         snippet: this.snippet
       }).then(() => {
-        this.collectionId = null, this.body = null;
-        this.snippet = null;
+        this.collectionId = null, this.body = null, this.snippet = null;
       });
     }
   }),
@@ -43875,6 +43877,141 @@ var index = {
 
 module.exports = index;
 
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(44)(
+  /* script */
+  __webpack_require__(104),
+  /* template */
+  __webpack_require__(105),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/max/Desktop/Learnik/resources/assets/js/components/Search.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Search.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-60447816", Component.options)
+  } else {
+    hotAPI.reload("data-v-60447816", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data() {
+    return {
+      query: null
+    };
+  },
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['search']), {
+    send() {
+      this.search({
+        query: this.query
+      }).then(() => {
+        this.query = null;
+      });
+    }
+  }),
+  props: [],
+  mounted() {}
+});
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-body"
+  }, [_c('form', {
+    attrs: {
+      "role": "search",
+      "action": "",
+      "method": "get"
+    }
+  }, [_c('div', {
+    staticClass: "input-group"
+  }, [_c('input', {
+    staticClass: "form-control",
+    attrs: {
+      "type": "text",
+      "name": "q",
+      "id": "q"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "input-group-btn"
+  }, [_c('button', {
+    staticClass: "btn btn-default btn-index-search",
+    attrs: {
+      "type": "submit"
+    }
+  }, [_vm._v("Найти")])])])])])])])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-60447816", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

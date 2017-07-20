@@ -71,7 +71,7 @@ export default {
         snippet: this.snippet
       }).then(() => {
         this.collectionId = null,
-        this.body = null
+        this.body = null,
         this.snippet = null
       })
     }
