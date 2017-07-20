@@ -5,11 +5,17 @@ namespace App\Http\Controllers\WebApi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCard;
+use App\Models\Card;
 
 class CardController extends Controller
 {
     public function store(StoreCard $request)
     {
-        return [$request->body, $request->snippet];
+        $body = $request->body;
+        $snippet = $request->snippet;
+        $card = new Card;
+        $card->body = $body;
+        $card->snippet = $snippet;
+        $card->save();
     }
 }
