@@ -21,5 +21,5 @@ Route::group(['prefix' => 'webapi', 'namespace' => 'WebApi'], function () {
     Route::get('/themes', 'ThemeController@index');
     Route::get('/themes/{theme}', 'ThemeController@show');
     Route::get('/collections/{collection}', 'CollectionController@show');
-    Route::post('/cards', 'CardController@store');
+    Route::post('/cards', 'CardController@store')->middleware('auth');;
 });

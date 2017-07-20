@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Collection;
+use App\Models\Card;
 
 class CardController extends Controller
 {
@@ -28,6 +29,8 @@ class CardController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Card::class);
+
         $collections = Collection::all();
         return view('card.create', compact('collections'));
     }

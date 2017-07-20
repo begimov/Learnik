@@ -11,6 +11,8 @@ class CardController extends Controller
 {
     public function store(StoreCard $request)
     {
+        $this->authorize('create', Card::class);
+
         $body = $request->body;
         $snippet = $request->snippet;
         $card = new Card;
