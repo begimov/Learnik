@@ -24,6 +24,7 @@ class StoreCard extends FormRequest
     public function rules()
     {
         return [
+            'collectionId' => 'required|numeric',
             'body' => 'required|max:1000',
             'snippet' => 'required|max:1000'
         ];

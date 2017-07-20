@@ -43455,10 +43455,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['createCard']), {
     send() {
       this.createCard({
+        collectionId: this.collectionId,
         body: this.body,
         snippet: this.snippet
       }).then(() => {
-        this.body = null;
+        this.collectionId = null, this.body = null;
         this.snippet = null;
       });
     },
@@ -43836,9 +43837,9 @@ if (false) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-    storeCard({ body, snippet }) {
+    storeCard({ collectionId, body, snippet }) {
         return new Promise((resolve, reject) => {
-            axios.post('/webapi/cards', { body, snippet }).then(res => {
+            axios.post('/webapi/cards', { collectionId, body, snippet }).then(res => {
                 resolve(res);
             });
         });
@@ -43854,8 +43855,8 @@ if (false) {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  createCard({ dispatch, commit }, { body, snippet }) {
-    return __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].cardcreator.storeCard({ body, snippet }).then(res => {});
+  createCard({ dispatch, commit }, { collectionId, body, snippet }) {
+    return __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].cardcreator.storeCard({ collectionId, body, snippet }).then(res => {});
   }
 });
 

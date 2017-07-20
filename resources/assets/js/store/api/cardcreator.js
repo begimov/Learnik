@@ -1,7 +1,7 @@
 export default {
-    storeCard({body, snippet}) {
+    storeCard({collectionId, body, snippet}) {
         return new Promise((resolve, reject) => {
-            axios.post('/webapi/cards', {body, snippet}).then(res => {
+            axios.post('/webapi/cards', {collectionId, body, snippet}).then(res => {
                 resolve(res)
             })
         })

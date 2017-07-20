@@ -14,8 +14,13 @@ class CardController extends Controller
         $body = $request->body;
         $snippet = $request->snippet;
         $card = new Card;
+        $card->collection_id = $request->collectionId;
         $card->body = $body;
         $card->snippet = $snippet;
         $card->save();
+
+        return response()->json([
+            'status' => 'OK'
+        ]);
     }
 }
