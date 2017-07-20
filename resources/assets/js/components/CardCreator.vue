@@ -15,7 +15,7 @@
                 <textarea v-model="body" id="body" rows="4" cols="30" placeholder="body..." class="form-control"></textarea>
               </div>
               <div class="form-group">
-                <textarea v-on:keyup.prevent.stop="prettyCode()" v-model="snippet" id="snippet" rows="4" cols="30" placeholder="snippet..." class="form-control"></textarea>
+                <textarea v-model="snippet" id="snippet" rows="4" cols="30" placeholder="snippet..." class="form-control"></textarea>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-default">Send</button>
@@ -29,10 +29,10 @@
           <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
               <div class="panel-body card-body">
-                  <p>{{ body }}</p>
-                  <div v-if="snippet">
-                    <pre><code class="prettyprint">{{ snippet }}</code></pre>
-                  </div>
+                <p>{{ body }}</p>
+                <div v-if="snippet">
+                  <prism language="php">{{ snippet }}</prism>
+                </div>
               </div>
             </div>
           </div>
@@ -46,8 +46,12 @@
 import {
   mapActions
 } from 'vuex'
+import Prism from 'vue-prism-component'
 
 export default {
+  components: {
+    Prism
+  },
   data() {
     return {
       collectionId: null,
@@ -70,9 +74,6 @@ export default {
         this.body = null
         this.snippet = null
       })
-    },
-    prettyCode() {
-      PR.prettyPrint();
     }
   },
   props: ['collections'],
