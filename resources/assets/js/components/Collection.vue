@@ -6,7 +6,9 @@
                   <div class="panel panel-default" v-if="cards">
                       <div class="panel-body card-body" v-if="card">
                         <p v-if="card.body">{{ card.body }}</p>
-                        <p v-if="card.snippet"><code class="prettyprint">{{ card.snippet }}</code></p>
+                        <p v-if="card.snippet">
+                          <prism language="javascript">{{ card.snippet }}</prism>
+                        </p>
                       </div>
                       <div class="panel-footer panel-custom">
                         <a href="#" v-on:click.stop.prevent="previousCard()">
@@ -28,8 +30,17 @@ import {
     mapActions,
     mapGetters
 } from 'vuex'
+import Prism from 'vue-prism-component'
 
 export default {
+    components: {
+      Prism
+    },
+    watch: {
+      card: function () {
+        // PR.prettyPrint()
+      }
+    },
     computed: {
         ...mapGetters([
             'cards',
@@ -42,7 +53,11 @@ export default {
             'getCards',
             'nextCard',
             'previousCard'
-        ])
+        ]),
+        prettyCode() {
+          console.log('!!!!!!');
+          PR.prettyPrint()
+        }
     },
     props: ['collectionId'],
     mounted() {

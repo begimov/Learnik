@@ -20,6 +20,7 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
+    "vue-prism-component": "^1.0.1",
     "vuex": "^2.3.1"
   }
 }
