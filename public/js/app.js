@@ -12608,6 +12608,8 @@ if (token) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__themes__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__theme__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collection__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cardcreator__ = __webpack_require__(97);
+
 
 
 
@@ -12615,7 +12617,8 @@ if (token) {
 /* harmony default export */ __webpack_exports__["a"] = ({
   themes: __WEBPACK_IMPORTED_MODULE_0__themes__["a" /* default */],
   theme: __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* default */],
-  collection: __WEBPACK_IMPORTED_MODULE_2__collection__["a" /* default */]
+  collection: __WEBPACK_IMPORTED_MODULE_2__collection__["a" /* default */],
+  cardcreator: __WEBPACK_IMPORTED_MODULE_3__cardcreator__["a" /* default */]
 });
 
 /***/ }),
@@ -12626,22 +12629,25 @@ if (token) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_themes__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_theme__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_collection__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_cardcreator__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuex__ = __webpack_require__(2);
 
 
 
 
 
 
-__WEBPACK_IMPORTED_MODULE_3_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vuex__["a" /* default */]);
 
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_4_vuex__["a" /* default */].Store({
+__WEBPACK_IMPORTED_MODULE_4_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vuex__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_5_vuex__["a" /* default */].Store({
   modules: {
     themes: __WEBPACK_IMPORTED_MODULE_0__modules_themes__["a" /* default */],
     theme: __WEBPACK_IMPORTED_MODULE_1__modules_theme__["a" /* default */],
-    collection: __WEBPACK_IMPORTED_MODULE_2__modules_collection__["a" /* default */]
+    collection: __WEBPACK_IMPORTED_MODULE_2__modules_collection__["a" /* default */],
+    cardcreator: __WEBPACK_IMPORTED_MODULE_3__modules_cardcreator__["a" /* default */]
   }
 }));
 
@@ -43426,6 +43432,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -43436,9 +43444,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       snippet: null
     };
   },
-  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['createConversation']), {
+  methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['createCard']), {
     send() {
-      this.createConversation({
+      this.createCard({
         body: this.body,
         snippet: this.snippet
       }).then(() => {
@@ -43524,7 +43532,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "value": (_vm.snippet)
     },
     on: {
-      "~keyup": function($event) {
+      "keyup": function($event) {
         $event.preventDefault();
         $event.stopPropagation();
         _vm.prettyCode()
@@ -43544,9 +43552,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-body"
-  }, [_c('p', [_vm._v(_vm._s(_vm.body))]), _vm._v(" "), _c('pre', [_c('code', {
+  }, [_c('p', [_vm._v(_vm._s(_vm.body))]), _vm._v(" "), (_vm.snippet) ? _c('div', [_c('pre', [_c('code', {
     staticClass: "prettyprint"
-  }, [_vm._v(_vm._s(_vm.snippet))])])])])])])])])])
+  }, [_vm._v(_vm._s(_vm.snippet))])])]) : _vm._e()])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "form-group"
@@ -43775,6 +43783,51 @@ if (false) {
     });
   })();
 }();
+
+/***/ }),
+/* 96 */,
+/* 97 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    storeCard({ body, snippet }) {
+        return new Promise((resolve, reject) => {
+            axios.post('/webapi/cards', { body, snippet }).then(res => {
+                resolve(res);
+            });
+        });
+    }
+});
+
+/***/ }),
+/* 98 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(33);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  createCard({ dispatch, commit }, { body, snippet }) {
+    return __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].cardcreator.storeCard({ body, snippet }).then(res => {
+      // TODO: update UI
+      console.log(res);
+    });
+  }
+});
+
+/***/ }),
+/* 99 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__actions__ = __webpack_require__(98);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  actions: __WEBPACK_IMPORTED_MODULE_0__actions__["a" /* default */]
+});
 
 /***/ })
 /******/ ]);
