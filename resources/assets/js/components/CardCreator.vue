@@ -9,7 +9,7 @@
                 <textarea v-model="body" id="body" rows="4" cols="30" placeholder="body..." class="form-control"></textarea>
               </div>
               <div class="form-group">
-                <textarea v-model="snippet" id="snippet" rows="4" cols="30" placeholder="snippet..." class="form-control"></textarea>
+                <textarea v-on:keyup.prevent.stop.once="prettyCode()" v-model="snippet" id="snippet" rows="4" cols="30" placeholder="snippet..." class="form-control"></textarea>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-default">Send</button>
@@ -23,12 +23,8 @@
           <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
               <div class="panel-body">
-                <div class="form-group">
-                <textarea v-model="body" class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                <textarea v-model="snippet" class="form-control"></textarea>
-                </div>
+                  <p>{{ body }}</p>
+                  <pre><code class="prettyprint">{{ snippet }}</code></pre>
               </div>
             </div>
           </div>
@@ -63,6 +59,9 @@ export default {
         this.snippet = null
       })
     },
+    prettyCode() {
+      PR.prettyPrint();
+    }
   },
   mounted() {
   }
