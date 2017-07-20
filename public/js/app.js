@@ -43437,14 +43437,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data() {
     return {
+      collectionId: null,
       body: null,
-      snippet: null
+      snippet: null,
+      collectionsList: JSON.parse(this.collections)
     };
   },
   methods: _extends({}, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['createCard']), {
@@ -43493,7 +43497,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "form-group"
-  }, [_vm._v("\n              " + _vm._s(_vm.collections) + "\n            ")]), _vm._v(" "), _c('div', {
+  }, [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.collectionId),
+      expression: "collectionId"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      "name": "collection",
+      "id": "collection"
+    },
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.collectionId = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+      }
+    }
+  }, _vm._l((_vm.collectionsList), function(collection) {
+    return _c('option', {
+      domProps: {
+        "value": collection.id
+      }
+    }, [_vm._v(_vm._s(collection.name))])
+  }))]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('textarea', {
     directives: [{

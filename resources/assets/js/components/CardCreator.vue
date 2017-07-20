@@ -6,7 +6,9 @@
           <div class="panel-body">
             <form class="form-group" action="#" v-on:submit.prevent="send">
               <div class="form-group">
-                {{collections}}
+                <select v-model="collectionId" name="collection" id="collection" class="form-control">
+                <option v-for="collection in collectionsList" :value="collection.id">{{ collection.name }}</option>
+                </select>
               </div>
               <div class="form-group">
                 <textarea v-model="body" id="body" rows="4" cols="30" placeholder="body..." class="form-control"></textarea>
@@ -47,8 +49,10 @@ import {
 export default {
   data() {
     return {
+      collectionId: null,
       body: null,
       snippet: null,
+      collectionsList: JSON.parse(this.collections)
     }
   },
   methods: {
