@@ -43811,7 +43811,6 @@ if (false) {
 /* harmony default export */ __webpack_exports__["a"] = ({
   createCard({ dispatch, commit }, { body, snippet }) {
     return __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].cardcreator.storeCard({ body, snippet }).then(res => {
-      // TODO: update UI
       console.log(res);
     });
   }
