@@ -4,7 +4,7 @@
             <div class="col-md-12" v-if="themes">
               <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="theme in themes">
                   <div class="panel panel-default">
-                      <div class="panel-body">
+                      <div class="panel-body card-body">
                         <a :href="`${route}/${theme.id}`"><h3>{{ theme.name }}</h3></a>
                       </div>
                   </div>

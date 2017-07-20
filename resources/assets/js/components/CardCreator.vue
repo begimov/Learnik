@@ -7,7 +7,8 @@
             <form class="form-group" action="#" v-on:submit.prevent="send">
               <div class="form-group">
                 <select v-model="collectionId" name="collection" id="collection" class="form-control">
-                <option v-for="collection in collectionsList" :value="collection.id">{{ collection.name }}</option>
+                  <option disabled value="">Выберите коллекцию</option>
+                  <option v-for="collection in collectionsList" :value="collection.id">{{ collection.name }}</option>
                 </select>
               </div>
               <div class="form-group">
@@ -27,7 +28,7 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-              <div class="panel-body">
+              <div class="panel-body card-body">
                   <p>{{ body }}</p>
                   <div v-if="snippet">
                     <pre><code class="prettyprint">{{ snippet }}</code></pre>

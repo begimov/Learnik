@@ -42993,7 +42993,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "panel panel-default"
     }, [_c('div', {
-      staticClass: "panel-body"
+      staticClass: "panel-body card-body"
     }, [_c('a', {
       attrs: {
         "href": (_vm.route + "/" + (theme.id))
@@ -43115,7 +43115,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "panel panel-default"
     }, [_c('div', {
-      staticClass: "panel-body"
+      staticClass: "panel-body card-body"
     }, [_c('a', {
       attrs: {
         "href": (_vm.route + "/" + (collection.id))
@@ -43316,7 +43316,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [(_vm.cards) ? _c('div', {
     staticClass: "panel panel-default"
   }, [(_vm.card) ? _c('div', {
-    staticClass: "panel-body"
+    staticClass: "panel-body card-body"
   }, [(_vm.card.body) ? _c('p', [_vm._v(_vm._s(_vm.card.body))]) : _vm._e(), _vm._v(" "), (_vm.card.snippet) ? _c('p', [_c('code', {
     staticClass: "prettyprint"
   }, [_vm._v(_vm._s(_vm.card.snippet))])]) : _vm._e()]) : _vm._e(), _vm._v(" "), _c('div', {
@@ -43396,6 +43396,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -43520,13 +43521,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.collectionId = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
       }
     }
-  }, _vm._l((_vm.collectionsList), function(collection) {
+  }, [_c('option', {
+    attrs: {
+      "disabled": "",
+      "value": ""
+    }
+  }, [_vm._v("Выберите коллекцию")]), _vm._v(" "), _vm._l((_vm.collectionsList), function(collection) {
     return _c('option', {
       domProps: {
         "value": collection.id
       }
     }, [_vm._v(_vm._s(collection.name))])
-  }))]), _vm._v(" "), _c('div', {
+  })], 2)]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('textarea', {
     directives: [{
@@ -43590,7 +43596,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
-    staticClass: "panel-body"
+    staticClass: "panel-body card-body"
   }, [_c('p', [_vm._v(_vm._s(_vm.body))]), _vm._v(" "), (_vm.snippet) ? _c('div', [_c('pre', [_c('code', {
     staticClass: "prettyprint"
   }, [_vm._v(_vm._s(_vm.snippet))])])]) : _vm._e()])])])])])])])
