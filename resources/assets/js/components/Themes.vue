@@ -3,11 +3,13 @@
         <div class="row">
             <div class="col-md-12" v-if="themes">
               <div class="collection col-lg-3 col-md-4 col-sm-6" v-for="theme in themes">
+                <a :href="`${route}/${theme.id}`">
                   <div class="panel panel-default">
                       <div class="panel-body card-body">
-                        <a :href="`${route}/${theme.id}`"><h3>{{ theme.name }}</h3></a>
+                        <h3>{{ theme.name }}</h3>
                       </div>
                   </div>
+                </a>
               </div>
             </div>
         </div>

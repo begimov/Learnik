@@ -42930,6 +42930,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -42990,14 +42992,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.themes), function(theme) {
     return _c('div', {
       staticClass: "collection col-lg-3 col-md-4 col-sm-6"
-    }, [_c('div', {
-      staticClass: "panel panel-default"
-    }, [_c('div', {
-      staticClass: "panel-body card-body"
     }, [_c('a', {
       attrs: {
         "href": (_vm.route + "/" + (theme.id))
       }
+    }, [_c('div', {
+      staticClass: "panel panel-default"
+    }, [_c('div', {
+      staticClass: "panel-body card-body"
     }, [_c('h3', [_vm._v(_vm._s(theme.name))])])])])])
   })) : _vm._e()])])
 },staticRenderFns: []}
@@ -43083,6 +43085,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -43112,14 +43116,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.collections), function(collection) {
     return _c('div', {
       staticClass: "collection col-lg-3 col-md-4 col-sm-6"
-    }, [_c('div', {
-      staticClass: "panel panel-default"
-    }, [_c('div', {
-      staticClass: "panel-body card-body"
     }, [_c('a', {
       attrs: {
         "href": (_vm.route + "/" + (collection.id))
       }
+    }, [_c('div', {
+      staticClass: "panel panel-default"
+    }, [_c('div', {
+      staticClass: "panel-body card-body"
     }, [_c('h3', [_vm._v(_vm._s(collection.name))])])])])])
   })) : _vm._e()])])
 },staticRenderFns: []}
