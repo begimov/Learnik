@@ -43938,10 +43938,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -43977,11 +43973,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-body"
   }, [_c('form', {
+    staticClass: "search-form",
     attrs: {
       "role": "search",
       "action": "",
@@ -44003,7 +43996,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "submit"
     }
-  }, [_vm._v("Найти")])])])])])])])])])
+  }, [_vm._v("Найти")])])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
